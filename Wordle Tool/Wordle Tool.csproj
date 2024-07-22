@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PracticePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PracticePage.Designer.cs">
+      <DependentUpon>PracticePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SolverPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SolverPage.Designer.cs">
+      <DependentUpon>SolverPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +69,9 @@
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PracticePage.resx">
+      <DependentUpon>PracticePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -66,6 +81,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SolverPage.resx">
+      <DependentUpon>SolverPage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
