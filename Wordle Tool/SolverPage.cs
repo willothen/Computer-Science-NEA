@@ -16,5 +16,19 @@ namespace Wordle_Tool
         {
             InitializeComponent();
         }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            Forms.mm.StartPosition = FormStartPosition.Manual;
+            Forms.mm.Location = this.Location;
+            Forms.mm.Show();
+
+            this.Hide();
+        }
+
+        private void SolverPage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

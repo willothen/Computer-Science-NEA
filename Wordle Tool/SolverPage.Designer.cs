@@ -28,19 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.BackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // BackButton
+            // 
+            this.BackButton.Location = new System.Drawing.Point(12, 12);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(75, 23);
+            this.BackButton.TabIndex = 0;
+            this.BackButton.Text = "back";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // SolverPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BackButton);
             this.Name = "SolverPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Wordle Solver";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SolverPage_FormClosed);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button BackButton;
     }
 }
