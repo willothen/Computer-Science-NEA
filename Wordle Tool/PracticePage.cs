@@ -103,7 +103,7 @@ namespace Wordle_Tool
     {
         private int currentLine = 0;
         private int nextCharIndex = 0;
-        private string solution = "audio";
+        private string solution;
         Label[,] words;
         
 
@@ -121,8 +121,8 @@ namespace Wordle_Tool
                 }
             }
 
-            //Random rnd = new Random();
-            //solution = wordsList[rnd.Next(wordsList.Length)];
+            Random rnd = new Random();
+            solution = wordsList[rnd.Next(wordsList.Length)];
         }
 
         public void AddCharacter(char c)
