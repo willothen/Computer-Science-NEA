@@ -30,7 +30,6 @@
         {
             this.BackButton = new System.Windows.Forms.Button();
             this.newGameButton = new System.Windows.Forms.Button();
-            this.testingLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BackButton
@@ -53,23 +52,12 @@
             this.newGameButton.UseVisualStyleBackColor = true;
             this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
             // 
-            // testingLabel
-            // 
-            this.testingLabel.AutoSize = true;
-            this.testingLabel.ForeColor = System.Drawing.Color.White;
-            this.testingLabel.Location = new System.Drawing.Point(511, 65);
-            this.testingLabel.Name = "testingLabel";
-            this.testingLabel.Size = new System.Drawing.Size(35, 13);
-            this.testingLabel.TabIndex = 2;
-            this.testingLabel.Text = "label1";
-            // 
             // PracticePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(19)))));
             this.ClientSize = new System.Drawing.Size(368, 450);
-            this.Controls.Add(this.testingLabel);
             this.Controls.Add(this.newGameButton);
             this.Controls.Add(this.BackButton);
             this.Name = "PracticePage";
@@ -78,7 +66,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PracticePage_FormClosed);
             this.Load += new System.EventHandler(this.PracticePage_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -86,6 +73,5 @@
 
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button newGameButton;
-        private System.Windows.Forms.Label testingLabel;
     }
 }

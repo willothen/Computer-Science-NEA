@@ -49,9 +49,6 @@ namespace Wordle_Tool
             }
 
             game = new PracticeGame(ref words);
-            // FOR TESTING ONLY
-            //testingLabel.Text = game.solution;
-            testingLabel.Text = "blud";
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -90,10 +87,6 @@ namespace Wordle_Tool
         private void newGameButton_Click(object sender, EventArgs e)
         {
             game = new PracticeGame(ref words);
-
-            // FOR TESTING ONLY
-            //testingLabel.Text = game.solution;
-            testingLabel.Text = "blud";
         }
     }
 
@@ -102,8 +95,7 @@ namespace Wordle_Tool
         private int currentLine = 0;
         private int nextCharIndex = 0;
 
-        // FOR TESTING ONLY SET TO PRIVATE LATER
-        public string solution;
+        private string solution;
         Label[,] words;
 
         public PracticeGame(ref Label[,] words)
