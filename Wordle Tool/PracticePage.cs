@@ -55,7 +55,8 @@ namespace Wordle_Tool
 
             game = new PracticeGame(ref words, wordList);
             // FOR TESTING ONLY
-            testingLabel.Text = game.solution;
+            //testingLabel.Text = game.solution;
+            testingLabel.Text = "blud";
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -96,7 +97,8 @@ namespace Wordle_Tool
             game = new PracticeGame(ref words, wordList);
 
             // FOR TESTING ONLY
-            testingLabel.Text = game.solution;
+            //testingLabel.Text = game.solution;
+            testingLabel.Text = "blud";
         }
     }
 
@@ -131,7 +133,7 @@ namespace Wordle_Tool
 
         public void AddCharacter(char c)
         {
-            if (nextCharIndex < 5)
+            if (nextCharIndex < 5 && currentLine <= 5)
             {
                 words[currentLine, nextCharIndex].Text = c.ToString();
                 nextCharIndex++;

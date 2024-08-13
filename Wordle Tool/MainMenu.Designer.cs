@@ -34,7 +34,7 @@
             // 
             // SolverPageButton
             // 
-            this.SolverPageButton.Location = new System.Drawing.Point(303, 125);
+            this.SolverPageButton.Location = new System.Drawing.Point(139, 163);
             this.SolverPageButton.Name = "SolverPageButton";
             this.SolverPageButton.Size = new System.Drawing.Size(75, 23);
             this.SolverPageButton.TabIndex = 0;
@@ -44,7 +44,7 @@
             // 
             // PracticePageButton
             // 
-            this.PracticePageButton.Location = new System.Drawing.Point(302, 212);
+            this.PracticePageButton.Location = new System.Drawing.Point(139, 219);
             this.PracticePageButton.Name = "PracticePageButton";
             this.PracticePageButton.Size = new System.Drawing.Size(75, 23);
             this.PracticePageButton.TabIndex = 1;
@@ -57,7 +57,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(368, 450);
             this.Controls.Add(this.PracticePageButton);
             this.Controls.Add(this.SolverPageButton);
             this.Name = "MainMenu";
