@@ -52,6 +52,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Wordle Solver";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SolverPage_FormClosed);
+            this.Load += new System.EventHandler(this.SolverPage_Load);
             this.ResumeLayout(false);
 
         }

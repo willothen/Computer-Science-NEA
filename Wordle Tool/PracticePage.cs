@@ -31,7 +31,7 @@ namespace Wordle_Tool
                     Label label = new Label();
                     label.Text = "";
                     label.Location = new Point(x, y);
-                    label.BackColor = Color.FromArgb(18, 18, 19);
+                    label.BackColor = WordleColours.black;
                     label.Size = new Size(50, 50);
                     label.Font = new Font("Arial", 33, FontStyle.Bold);
                     label.ForeColor = Color.White;
@@ -182,13 +182,13 @@ namespace Wordle_Tool
                 switch (ints[i])
                 {
                     case 0:
-                        words[currentLine, i].BackColor = Color.Gray;
+                        words[currentLine, i].BackColor = WordleColours.grey;
                         break;
                     case 1:
-                        words[currentLine, i].BackColor = Color.FromArgb(181, 159, 59);
+                        words[currentLine, i].BackColor = WordleColours.yellow;
                         break;
                     case 2:
-                        words[currentLine, i].BackColor = Color.Green;
+                        words[currentLine, i].BackColor = WordleColours.green;
                         break;
                 }
             }
@@ -203,7 +203,7 @@ namespace Wordle_Tool
             }
         }
 
-        string RowToString(int row)
+        private string RowToString(int row)
         {
             string s = "";
 
