@@ -34,10 +34,9 @@
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(16, 15);
-            this.BackButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BackButton.Location = new System.Drawing.Point(12, 12);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(100, 28);
+            this.BackButton.Size = new System.Drawing.Size(75, 23);
             this.BackButton.TabIndex = 0;
             this.BackButton.Text = "back";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -45,23 +44,23 @@
             // 
             // NextWordButton
             // 
-            this.NextWordButton.Location = new System.Drawing.Point(593, 110);
+            this.NextWordButton.Location = new System.Drawing.Point(68, 409);
+            this.NextWordButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NextWordButton.Name = "NextWordButton";
-            this.NextWordButton.Size = new System.Drawing.Size(143, 23);
+            this.NextWordButton.Size = new System.Drawing.Size(107, 19);
             this.NextWordButton.TabIndex = 1;
             this.NextWordButton.Text = "next word";
             this.NextWordButton.UseVisualStyleBackColor = true;
-            this.NextWordButton.Click += new System.EventHandler(this.button1_Click);
+            this.NextWordButton.Click += new System.EventHandler(this.NextWordButtonClicked);
             // 
             // SolverPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.NextWordButton);
             this.Controls.Add(this.BackButton);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SolverPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Wordle Solver";

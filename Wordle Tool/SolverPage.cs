@@ -67,9 +67,9 @@ namespace Wordle_Tool
             solve.LetterClicked((Label)sender);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void NextWordButtonClicked(object sender, EventArgs e)
         {
-
+            solve.NextWordButtonClicked();
         }
     }
 
@@ -77,6 +77,8 @@ namespace Wordle_Tool
     {
         Label[,] words;
         string startWord = "salet";
+        string[] possibleWords = WordLists.answers;
+        string[] extraWords = WordLists.guessable;
 
         public SolveWordle(ref Label[,] words)
         {
@@ -107,6 +109,11 @@ namespace Wordle_Tool
             {
                 l.BackColor = WordleColours.grey;
             }
+        }
+
+        public void NextWordButtonClicked()
+        {
+            
         }
     }
 }
