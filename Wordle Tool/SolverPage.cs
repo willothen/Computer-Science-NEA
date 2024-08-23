@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -77,8 +78,9 @@ namespace Wordle_Tool
     {
         Label[,] words;
         string startWord = "salet";
-        string[] possibleWords = WordLists.answers;
-        string[] extraWords = WordLists.guessable;
+        List<string> possibleAnswers = WordLists.answersList;
+        string[] enterableWords = WordLists.guessable;
+        int currentRow = 0;
 
         public SolveWordle(ref Label[,] words)
         {
@@ -111,9 +113,23 @@ namespace Wordle_Tool
             }
         }
 
+        private void RemoveWordsWithGreyCharacters(List<char> characters, List<string> wordList)
+        {
+            foreach (char c in characters)
+            {
+                for (int i = 0; i < wordList.Count;i++)
+                {
+                    if (wordList[i].Contains(c.ToString()))
+                    {
+                        wordList.RemoveAt(i);
+                    }
+                }
+            }
+        }
+
         public void NextWordButtonClicked()
         {
-            
+               
         }
     }
 }
