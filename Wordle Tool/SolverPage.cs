@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
+using System.Net.Http.Headers;
 using System.Windows.Forms;
 
 namespace Wordle_Tool
@@ -78,9 +80,9 @@ namespace Wordle_Tool
     {
         Label[,] words;
         string startWord = "salet";
-        List<string> possibleAnswers = WordLists.answersList;
-        string[] enterableWords = WordLists.guessable;
         int currentRow = 0;
+        List<char> unusedLetters = "abcdefghijklmnopqrstuvwxyz".ToCharArray().ToList<char>();
+        List<char> greyLetters = new List<char>();
 
         public SolveWordle(ref Label[,] words)
         {
@@ -113,23 +115,22 @@ namespace Wordle_Tool
             }
         }
 
-        private void RemoveWordsWithGreyCharacters(List<char> characters, List<string> wordList)
+        private void CollectGreyLetters(int row)
         {
-            foreach (char c in characters)
+            for (int i = 0; i < 5; i++)
             {
-                for (int i = 0; i < wordList.Count;i++)
+                if (words[row, i].BackColor == WordleColours.grey)
                 {
-                    if (wordList[i].Contains(c.ToString()))
-                    {
-                        wordList.RemoveAt(i);
-                    }
+                    greyLetters.Add(words[row, i].Text.ToLower()[0]);
                 }
             }
         }
 
         public void NextWordButtonClicked()
         {
-               
+            CollectGreyLetters(currentRow);
+
+            currentRow++;
         }
     }
 }
