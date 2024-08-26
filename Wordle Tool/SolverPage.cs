@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Windows.Forms;
 
 namespace Wordle_Tool
@@ -83,6 +82,9 @@ namespace Wordle_Tool
         int currentRow = 0;
         List<char> unusedLetters = "abcdefghijklmnopqrstuvwxyz".ToCharArray().ToList<char>();
         List<char> greyLetters = new List<char>();
+        List<string> possibleWords = WordLists.GetAllWordsList();
+        char[] greenLetters = new char[5] { ' ', ' ', ' ', ' ', ' ' };
+        char[,] yellowLetters = new char[6, 5];
 
         public SolveWordle(ref Label[,] words)
         {
@@ -96,6 +98,16 @@ namespace Wordle_Tool
             {
                 words[row, i].Text = s[i].ToString().ToUpper();
                 words[row, i].BackColor = WordleColours.grey;
+            }
+
+            RemoveUsedLetters(s);
+        }
+
+        private void RemoveUsedLetters(string s)
+        {
+            foreach (char c in s)
+            {
+                unusedLetters.Remove(c);
             }
         }
 
@@ -126,11 +138,79 @@ namespace Wordle_Tool
             }
         }
 
+        private void CollectYellowLetters(int row)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (words[row, i].BackColor == WordleColours.yellow)
+                {
+                    yellowLetters[row, i] = words[row, i].Text.ToLower()[0];
+                }
+            }
+        }
+
+        private void CollectGreenLetters(int row)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (words[row, i].BackColor == WordleColours.green)
+                {
+                    greenLetters[i] = words[row, i].Text.ToLower()[0];
+                }
+            }
+        }
+
         public void NextWordButtonClicked()
         {
             CollectGreyLetters(currentRow);
+            CollectGreenLetters(currentRow);
+            RemoveImpossibleWordsFromWordList();
+
 
             currentRow++;
+            SetRow("salet", currentRow);
+        }
+
+        public void RemoveImpossibleWordsFromWordList()
+        {
+            List<string> newPossibleWords = new List<string>();
+
+            foreach(string s in possibleWords)
+            {
+                bool possible = true;
+                
+                for (int i = 0; i < 5; i++)
+                {
+                    // check green letters against all words
+                    if (s[i] != greenLetters[i] && greenLetters[i] != ' ')
+                    {
+                        possible = false; 
+                        break;
+                    }
+                    // check if word contains a grey letter
+                    else if (greyLetters.Contains(s[i]))
+                    {
+                        possible = false;
+                        break;
+                    }
+                }
+
+                // check yellow letters
+
+                if (possible)
+                {
+                    newPossibleWords.Add(s);
+                }
+            }
+
+            possibleWords = newPossibleWords;
+        }
+
+        private string BestNextWord()
+        {
+
+
+            return null;
         }
     }
 }
