@@ -30,6 +30,7 @@
         {
             this.BackButton = new System.Windows.Forms.Button();
             this.NextWordButton = new System.Windows.Forms.Button();
+            this.ResetSolverButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BackButton
@@ -51,7 +52,18 @@
             this.NextWordButton.TabIndex = 1;
             this.NextWordButton.Text = "next word";
             this.NextWordButton.UseVisualStyleBackColor = true;
-            this.NextWordButton.Click += new System.EventHandler(this.NextWordButtonClicked);
+            this.NextWordButton.Click += new System.EventHandler(this.NextWordButton_Clicked);
+            // 
+            // ResetSolverButton
+            // 
+            this.ResetSolverButton.Location = new System.Drawing.Point(197, 409);
+            this.ResetSolverButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ResetSolverButton.Name = "ResetSolverButton";
+            this.ResetSolverButton.Size = new System.Drawing.Size(107, 19);
+            this.ResetSolverButton.TabIndex = 2;
+            this.ResetSolverButton.Text = "reset";
+            this.ResetSolverButton.UseVisualStyleBackColor = true;
+            this.ResetSolverButton.Click += new System.EventHandler(this.ResetSolverButton_Clicked);
             // 
             // SolverPage
             // 
@@ -59,6 +71,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(407, 450);
+            this.Controls.Add(this.ResetSolverButton);
             this.Controls.Add(this.NextWordButton);
             this.Controls.Add(this.BackButton);
             this.Name = "SolverPage";
@@ -74,5 +87,6 @@
 
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button NextWordButton;
+        private System.Windows.Forms.Button ResetSolverButton;
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -70,16 +69,21 @@ namespace Wordle_Tool
             solve.LetterClicked((Label)sender);
         }
 
-        private void NextWordButtonClicked(object sender, EventArgs e)
+        private void NextWordButton_Clicked(object sender, EventArgs e)
         {
             solve.NextWordButtonClicked();
+        }
+
+        private void ResetSolverButton_Clicked(object sender, EventArgs e)
+        {
+            solve = new SolveWordle(ref words);
         }
     }
 
     public class SolveWordle
     {
         Label[,] words;
-        string startWord = "slate";
+        string startWord = "salet";
         int currentRow = 0;
         List<char> unusedLetters = "abcdefghijklmnopqrstuvwxyz".ToCharArray().ToList<char>();
         List<char> greyLetters = new List<char>();
@@ -92,6 +96,7 @@ namespace Wordle_Tool
         public SolveWordle(ref Label[,] words)
         {
             this.words = words;
+            ClearAll();
             SetRow(startWord, 0);
         }
 
@@ -106,6 +111,18 @@ namespace Wordle_Tool
             RemoveUsedLetters(s);
             usedWords.Add(s);
             possibleWords.Remove(s);
+        }
+
+        private void ClearAll()
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    words[i, j].Text = null;
+                    words[i, j].BackColor = WordleColours.black;
+                }
+            }
         }
 
         private void RemoveUsedLetters(string s)
@@ -136,8 +153,8 @@ namespace Wordle_Tool
         {
             for (int i = 0; i < 5; i++)
             {
-                if (words[row, i].BackColor == WordleColours.grey 
-                    && !greyLetters.Contains(words[row, i].Text.ToLower()[0]) 
+                if (words[row, i].BackColor == WordleColours.grey
+                    && !greyLetters.Contains(words[row, i].Text.ToLower()[0])
                     && !greenLetters.Contains(words[row, i].Text.ToLower()[0])
                     && !yellowLettersList.Contains(words[row, i].Text.ToLower()[0]))
                 {
@@ -171,16 +188,19 @@ namespace Wordle_Tool
 
         public void NextWordButtonClicked()
         {
-            CollectGreenLetters(currentRow);
-            CollectYellowLetters(currentRow);
-            CollectGreyLetters(currentRow);
-            
-            
-            RemoveImpossibleWordsFromWordList();
+            if (currentRow <= 6)
+            {
+                CollectGreenLetters(currentRow);
+                CollectYellowLetters(currentRow);
+                CollectGreyLetters(currentRow);
 
 
-            currentRow++;
-            SetRow(BestNextWord(), currentRow);
+                RemoveImpossibleWordsFromWordList();
+
+
+                currentRow++;
+                SetRow(BestNextWord(), currentRow);
+            }
         }
 
         public void RemoveImpossibleWordsFromWordList()
