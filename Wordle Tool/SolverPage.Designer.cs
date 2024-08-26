@@ -45,7 +45,7 @@
             // NextWordButton
             // 
             this.NextWordButton.Location = new System.Drawing.Point(68, 409);
-            this.NextWordButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NextWordButton.Margin = new System.Windows.Forms.Padding(2);
             this.NextWordButton.Name = "NextWordButton";
             this.NextWordButton.Size = new System.Drawing.Size(107, 19);
             this.NextWordButton.TabIndex = 1;
@@ -58,7 +58,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(407, 450);
             this.Controls.Add(this.NextWordButton);
             this.Controls.Add(this.BackButton);
             this.Name = "SolverPage";

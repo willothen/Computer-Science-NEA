@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Metadata;
 using System.Windows.Forms;
 
 namespace Wordle_Tool
@@ -79,13 +79,15 @@ namespace Wordle_Tool
     public class SolveWordle
     {
         Label[,] words;
-        string startWord = "salet";
+        string startWord = "slate";
         int currentRow = 0;
         List<char> unusedLetters = "abcdefghijklmnopqrstuvwxyz".ToCharArray().ToList<char>();
         List<char> greyLetters = new List<char>();
-        List<string> possibleWords = WordLists.GetAllWordsList();
+        List<string> possibleWords = WordLists.answersList;
         char[] greenLetters = new char[5] { ' ', ' ', ' ', ' ', ' ' };
         char[,] yellowLetters = new char[6, 5];
+        List<char> yellowLettersList = new List<char>();
+        List<string> usedWords = new List<string>();
 
         public SolveWordle(ref Label[,] words)
         {
@@ -102,6 +104,8 @@ namespace Wordle_Tool
             }
 
             RemoveUsedLetters(s);
+            usedWords.Add(s);
+            possibleWords.Remove(s);
         }
 
         private void RemoveUsedLetters(string s)
@@ -132,7 +136,10 @@ namespace Wordle_Tool
         {
             for (int i = 0; i < 5; i++)
             {
-                if (words[row, i].BackColor == WordleColours.grey)
+                if (words[row, i].BackColor == WordleColours.grey 
+                    && !greyLetters.Contains(words[row, i].Text.ToLower()[0]) 
+                    && !greenLetters.Contains(words[row, i].Text.ToLower()[0])
+                    && !yellowLettersList.Contains(words[row, i].Text.ToLower()[0]))
                 {
                     greyLetters.Add(words[row, i].Text.ToLower()[0]);
                 }
@@ -146,6 +153,7 @@ namespace Wordle_Tool
                 if (words[row, i].BackColor == WordleColours.yellow)
                 {
                     yellowLetters[row, i] = words[row, i].Text.ToLower()[0];
+                    yellowLettersList.Add(words[row, i].Text.ToLower()[0]);
                 }
             }
         }
@@ -163,14 +171,16 @@ namespace Wordle_Tool
 
         public void NextWordButtonClicked()
         {
-            CollectGreyLetters(currentRow);
-            CollectYellowLetters(currentRow);
             CollectGreenLetters(currentRow);
+            CollectYellowLetters(currentRow);
+            CollectGreyLetters(currentRow);
+            
+            
             RemoveImpossibleWordsFromWordList();
 
 
             currentRow++;
-            //SetRow("salet", currentRow);
+            SetRow(BestNextWord(), currentRow);
         }
 
         public void RemoveImpossibleWordsFromWordList()
@@ -179,6 +189,12 @@ namespace Wordle_Tool
 
             foreach (string s in possibleWords)
             {
+                if (s == "mealy" && currentRow == 1)
+                {
+                    int x = 5;
+                }
+
+
                 bool possible = true;
 
                 for (int i = 0; i < 5; i++)
@@ -216,7 +232,7 @@ namespace Wordle_Tool
                         }
                     }
                 }
-                
+
                 if (possible)
                 {
                     newPossibleWords.Add(s);
@@ -228,9 +244,49 @@ namespace Wordle_Tool
 
         private string BestNextWord()
         {
+            Dictionary<char, int> letterCount = new Dictionary<char, int>();
 
+            foreach (string s in possibleWords)
+            {
+                foreach (char c in s)
+                {
+                    if (!letterCount.ContainsKey(c))
+                    {
+                        letterCount.Add(c, 1);
+                    }
+                    else
+                    {
+                        letterCount[c]++;
+                    }
+                }
+            }
 
-            return null;
+            int bestScore = 0;
+            string bestWord = "";
+
+            foreach (string s in possibleWords)
+            {
+                int currentScore = 0;
+
+                foreach (char c in s)
+                {
+                    if (letterCount.ContainsKey(c))
+                    {
+                        currentScore += letterCount[c];
+                    }
+                }
+
+                if (currentScore > bestScore && !usedWords.Contains(s))
+                {
+                    bestScore = currentScore;
+                    bestWord = s;
+                }
+            }
+
+            if (possibleWords.Count == 1)
+                return possibleWords.First();
+
+            return bestWord;
         }
     }
 }
