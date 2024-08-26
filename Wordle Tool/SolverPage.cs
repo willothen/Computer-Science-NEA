@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Metadata;
 using System.Windows.Forms;
 
 namespace Wordle_Tool
@@ -163,28 +164,29 @@ namespace Wordle_Tool
         public void NextWordButtonClicked()
         {
             CollectGreyLetters(currentRow);
+            CollectYellowLetters(currentRow);
             CollectGreenLetters(currentRow);
             RemoveImpossibleWordsFromWordList();
 
 
             currentRow++;
-            SetRow("salet", currentRow);
+            //SetRow("salet", currentRow);
         }
 
         public void RemoveImpossibleWordsFromWordList()
         {
             List<string> newPossibleWords = new List<string>();
 
-            foreach(string s in possibleWords)
+            foreach (string s in possibleWords)
             {
                 bool possible = true;
-                
+
                 for (int i = 0; i < 5; i++)
                 {
                     // check green letters against all words
                     if (s[i] != greenLetters[i] && greenLetters[i] != ' ')
                     {
-                        possible = false; 
+                        possible = false;
                         break;
                     }
                     // check if word contains a grey letter
@@ -196,7 +198,25 @@ namespace Wordle_Tool
                 }
 
                 // check yellow letters
+                foreach (char c in yellowLetters)
+                {
+                    if (!s.Contains(c) && char.IsLetter(c))
+                    {
+                        possible = false;
+                    }
+                }
 
+                for (int i = 0; i < 6; i++)
+                {
+                    for (int j = 0; j < 5; j++)
+                    {
+                        if (s[j] == yellowLetters[i, j])
+                        {
+                            possible = false;
+                        }
+                    }
+                }
+                
                 if (possible)
                 {
                     newPossibleWords.Add(s);
