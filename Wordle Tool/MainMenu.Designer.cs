@@ -31,11 +31,12 @@
             this.SolverPageButton = new System.Windows.Forms.Button();
             this.PracticePageButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SolverPageButton
             // 
-            this.SolverPageButton.Location = new System.Drawing.Point(139, 163);
+            this.SolverPageButton.Location = new System.Drawing.Point(83, 117);
             this.SolverPageButton.Name = "SolverPageButton";
             this.SolverPageButton.Size = new System.Drawing.Size(75, 23);
             this.SolverPageButton.TabIndex = 0;
@@ -45,7 +46,7 @@
             // 
             // PracticePageButton
             // 
-            this.PracticePageButton.Location = new System.Drawing.Point(139, 219);
+            this.PracticePageButton.Location = new System.Drawing.Point(83, 146);
             this.PracticePageButton.Name = "PracticePageButton";
             this.PracticePageButton.Size = new System.Drawing.Size(75, 23);
             this.PracticePageButton.TabIndex = 1;
@@ -57,21 +58,34 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(148, 46);
+            this.label1.Location = new System.Drawing.Point(90, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Wordle Tool";
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.Location = new System.Drawing.Point(83, 175);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(75, 23);
+            this.ExitButton.TabIndex = 3;
+            this.ExitButton.Text = "Exit";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(368, 450);
+            this.ClientSize = new System.Drawing.Size(244, 265);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PracticePageButton);
             this.Controls.Add(this.SolverPageButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainMenu";
             this.Text = "Main Menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenu_FormClosed);
@@ -86,6 +100,7 @@
         private System.Windows.Forms.Button SolverPageButton;
         private System.Windows.Forms.Button PracticePageButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ExitButton;
     }
 }
 

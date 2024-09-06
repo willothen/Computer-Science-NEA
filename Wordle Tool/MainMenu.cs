@@ -42,5 +42,10 @@ namespace Wordle_Tool
         {
             Application.Exit();
         }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

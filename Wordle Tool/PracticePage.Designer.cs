@@ -60,6 +60,8 @@
             this.ClientSize = new System.Drawing.Size(368, 450);
             this.Controls.Add(this.newGameButton);
             this.Controls.Add(this.BackButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "PracticePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Wordle Practice";

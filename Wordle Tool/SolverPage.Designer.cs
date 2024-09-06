@@ -74,6 +74,8 @@
             this.Controls.Add(this.ResetSolverButton);
             this.Controls.Add(this.NextWordButton);
             this.Controls.Add(this.BackButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "SolverPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Wordle Solver";
