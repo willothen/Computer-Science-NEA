@@ -209,12 +209,6 @@ namespace Wordle_Tool
 
             foreach (string s in possibleWords)
             {
-                if (s == "mealy" && currentRow == 1)
-                {
-                    int x = 5;
-                }
-
-
                 bool possible = true;
 
                 for (int i = 0; i < 5; i++)

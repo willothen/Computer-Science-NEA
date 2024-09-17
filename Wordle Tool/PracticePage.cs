@@ -177,6 +177,8 @@ namespace Wordle_Tool
 
         private void SetColours(int[] ints)
         {
+            int numberOfGreen = 0;
+
             for (int i = 0; i < 5; i++)
             {
                 switch (ints[i])
@@ -189,9 +191,25 @@ namespace Wordle_Tool
                         break;
                     case 2:
                         words[currentLine, i].BackColor = WordleColours.green;
+                        numberOfGreen++;
                         break;
                 }
             }
+
+            if (numberOfGreen == 5)
+            {
+                GameComplete();
+            }
+        }
+
+        private void GameComplete()
+        {
+            Panel winPanel = new Panel();
+            winPanel.Location = new Point(10, 10);
+            winPanel.Size = new Size(100, 100);
+            winPanel.BackColor = Color.FromArgb(10, 10, 10, 255);
+            
+            Forms.pp.Controls.Add(winPanel);
         }
 
         public void RemoveCharacter()
