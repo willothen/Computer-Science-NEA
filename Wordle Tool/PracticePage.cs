@@ -53,9 +53,9 @@ namespace Wordle_Tool
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            Forms.mm.StartPosition = FormStartPosition.Manual;
-            Forms.mm.Location = this.Location;
-            Forms.mm.Show();
+            Forms.MainMenu.StartPosition = FormStartPosition.Manual;
+            Forms.MainMenu.Location = this.Location;
+            Forms.MainMenu.Show();
 
             this.Hide();
         }
@@ -209,7 +209,7 @@ namespace Wordle_Tool
             winPanel.Size = new Size(100, 100);
             winPanel.BackColor = Color.FromArgb(10, 10, 10, 255);
             
-            Forms.pp.Controls.Add(winPanel);
+            Forms.PracticePage.Controls.Add(winPanel);
         }
 
         public void RemoveCharacter()
