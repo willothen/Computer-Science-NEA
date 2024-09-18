@@ -57,7 +57,26 @@ namespace Wordle_Tool
 
     public static class Users
     {
-        static List<User> users = new List<User>();
+        public static List<User> users = new List<User>();
+
+        public static void CreateUser(string name)
+        {
+            User u = new User(name);
+            users.Add(u);
+        }
+
+        public static User GetUserByName(string name)
+        {
+            foreach (User u in users)
+            {
+                if (u.name == name)
+                {
+                    return u;
+                }
+            }
+
+            //return null;
+        }
 
         public static void SaveUsersToFile()
         {

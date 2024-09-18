@@ -16,5 +16,45 @@ namespace Wordle_Tool
         {
             InitializeComponent();
         }
+
+        private void userCreateButton_Click(object sender, EventArgs e)
+        {
+            Users.CreateUser(userCreateTextBox.Text);
+            userCreateTextBox.Text = string.Empty;
+        }
+
+        private void UsersPage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            Forms.MainMenu.StartPosition = FormStartPosition.Manual;
+            Forms.MainMenu.Location = this.Location;
+            Forms.MainMenu.Show();
+
+            this.Hide();
+        }
+
+        private void deleteUserButton_Click(object sender, EventArgs e)
+        {
+            //Users.users.Remove()
+        }
+
+        public void PopulateComboBox(List<User> users)
+        {
+            deleteUsersComboBox.Items.Clear();
+
+            foreach (User user in users)
+            {
+                deleteUsersComboBox.Items.Add(user.name);
+            }
+        }
+
+        private void UsersPage_Load(object sender, EventArgs e)
+        {
+            PopulateComboBox(Users.users);
+        }
     }
 }
