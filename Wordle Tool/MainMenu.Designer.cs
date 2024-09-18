@@ -32,6 +32,7 @@
             this.PracticePageButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.usersButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SolverPageButton
@@ -66,7 +67,7 @@
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(83, 175);
+            this.ExitButton.Location = new System.Drawing.Point(83, 204);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(75, 23);
             this.ExitButton.TabIndex = 3;
@@ -74,12 +75,23 @@
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // usersButton
+            // 
+            this.usersButton.Location = new System.Drawing.Point(83, 175);
+            this.usersButton.Name = "usersButton";
+            this.usersButton.Size = new System.Drawing.Size(75, 23);
+            this.usersButton.TabIndex = 4;
+            this.usersButton.Text = "Users";
+            this.usersButton.UseVisualStyleBackColor = true;
+            this.usersButton.Click += new System.EventHandler(this.usersButton_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(244, 265);
+            this.Controls.Add(this.usersButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PracticePageButton);
@@ -101,6 +113,7 @@
         private System.Windows.Forms.Button PracticePageButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Button usersButton;
     }
 }
 

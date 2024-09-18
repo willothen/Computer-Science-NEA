@@ -19,21 +19,21 @@ namespace Wordle_Tool
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            Forms.mm = this;
+            Forms.MainMenu = this;
         }
 
         private void SolverPageButton_Click(object sender, EventArgs e)
         {
-            Forms.sp.Location = this.Location;
-            Forms.sp.Show();
+            Forms.SolverPage.Location = this.Location;
+            Forms.SolverPage.Show();
 
             this.Hide();
         }
 
         private void PracticePageButton_Click(object sender, EventArgs e)
         {
-            Forms.pp.Location = this.Location;
-            Forms.pp.Show();
+            Forms.PracticePage.Location = this.Location;
+            Forms.PracticePage.Show();
 
             this.Hide();
         }
@@ -46,6 +46,14 @@ namespace Wordle_Tool
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void usersButton_Click(object sender, EventArgs e)
+        {
+            Forms.UsersPage.Location = this.Location;
+            Forms.UsersPage.Show();
+
+            this.Hide();
         }
     }
 }

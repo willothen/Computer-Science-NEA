@@ -90,6 +90,9 @@
     <EmbeddedResource Include="SolverPage.resx">
       <DependentUpon>SolverPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UsersPage.resx">
+      <DependentUpon>UsersPage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
