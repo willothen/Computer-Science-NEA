@@ -39,14 +39,14 @@
             // 
             // userCreateTextBox
             // 
-            this.userCreateTextBox.Location = new System.Drawing.Point(43, 44);
+            this.userCreateTextBox.Location = new System.Drawing.Point(22, 64);
             this.userCreateTextBox.Name = "userCreateTextBox";
-            this.userCreateTextBox.Size = new System.Drawing.Size(100, 20);
+            this.userCreateTextBox.Size = new System.Drawing.Size(121, 20);
             this.userCreateTextBox.TabIndex = 0;
             // 
             // userCreateButton
             // 
-            this.userCreateButton.Location = new System.Drawing.Point(149, 43);
+            this.userCreateButton.Location = new System.Drawing.Point(157, 62);
             this.userCreateButton.Name = "userCreateButton";
             this.userCreateButton.Size = new System.Drawing.Size(75, 23);
             this.userCreateButton.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(43, 28);
+            this.label1.Location = new System.Drawing.Point(19, 48);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label1.Size = new System.Drawing.Size(61, 13);
@@ -79,7 +79,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(19, 77);
+            this.label2.Location = new System.Drawing.Point(19, 97);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label2.Size = new System.Drawing.Size(61, 13);
@@ -88,7 +88,7 @@
             // 
             // deleteUserButton
             // 
-            this.deleteUserButton.Location = new System.Drawing.Point(149, 91);
+            this.deleteUserButton.Location = new System.Drawing.Point(157, 113);
             this.deleteUserButton.Name = "deleteUserButton";
             this.deleteUserButton.Size = new System.Drawing.Size(75, 23);
             this.deleteUserButton.TabIndex = 5;
@@ -99,7 +99,7 @@
             // deleteUsersComboBox
             // 
             this.deleteUsersComboBox.FormattingEnabled = true;
-            this.deleteUsersComboBox.Location = new System.Drawing.Point(22, 93);
+            this.deleteUsersComboBox.Location = new System.Drawing.Point(22, 113);
             this.deleteUsersComboBox.Name = "deleteUsersComboBox";
             this.deleteUsersComboBox.Size = new System.Drawing.Size(121, 21);
             this.deleteUsersComboBox.TabIndex = 6;

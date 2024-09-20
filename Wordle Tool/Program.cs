@@ -45,13 +45,21 @@ namespace Wordle_Tool
         public static Color green = Color.FromArgb(83, 141, 78);
     }
 
-    public struct User
+    public class User
     {
         public string name;
 
         public User(string name)
         {
             this.name = name;
+        }
+
+        public string username
+        {
+            get
+            {
+                return name;
+            }
         }
     }
 
@@ -75,7 +83,7 @@ namespace Wordle_Tool
                 }
             }
 
-            //return null;
+            return new User("");
         }
 
         public static void SaveUsersToFile()
@@ -100,8 +108,7 @@ namespace Wordle_Tool
 
             for (int i = 0; i < usersCount; i++)
             {
-                User u = new User();
-                u.name = br.ReadString();
+                User u = new User(br.ReadString());
 
                 users.Add(u);
             }
