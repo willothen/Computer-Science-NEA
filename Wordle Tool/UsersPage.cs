@@ -21,6 +21,7 @@ namespace Wordle_Tool
         {
             Users.CreateUser(userCreateTextBox.Text);
             userCreateTextBox.Text = string.Empty;
+
             PopulateComboBox(Users.users);
         }
 
@@ -41,8 +42,9 @@ namespace Wordle_Tool
         private void deleteUserButton_Click(object sender, EventArgs e)
         {
             Users.users.Remove((User) deleteUsersComboBox.SelectedItem);
-            PopulateComboBox(Users.users);
             deleteUsersComboBox.Text = string.Empty;
+            
+            PopulateComboBox(Users.users);
         }
 
         public void PopulateComboBox(List<User> users)

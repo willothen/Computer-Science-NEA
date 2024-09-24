@@ -48,6 +48,7 @@ namespace Wordle_Tool
     public class User
     {
         public string name;
+        public double avgWordsTaken;
 
         public User(string name)
         {
@@ -70,6 +71,7 @@ namespace Wordle_Tool
         public static void CreateUser(string name)
         {
             User u = new User(name);
+            u.avgWordsTaken = 0;
             users.Add(u);
         }
 
@@ -95,13 +97,17 @@ namespace Wordle_Tool
             foreach (User u in users)
             {
                 bw.Write(u.name);
+                bw.Write(u.avgWordsTaken);
             }
 
             bw.Close();
         }
 
-        public static void LoadUsersFromFile()
+        public static bool LoadUsersFromFile()
         {
+            if (!File.Exists("users"))
+                return false;
+
             BinaryReader br = new BinaryReader(File.Open("users", FileMode.Open));
 
             int usersCount = br.ReadInt32();
@@ -109,11 +115,14 @@ namespace Wordle_Tool
             for (int i = 0; i < usersCount; i++)
             {
                 User u = new User(br.ReadString());
+                u.avgWordsTaken = br.ReadDouble();
 
                 users.Add(u);
             }
 
             br.Close();
+
+            return true;
         }
     }
 
@@ -131,7 +140,7 @@ namespace Wordle_Tool
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainMenu());
 
-            //Runs on exit of program
+            // Runs on exit of program
             Users.SaveUsersToFile();
         }
     }
