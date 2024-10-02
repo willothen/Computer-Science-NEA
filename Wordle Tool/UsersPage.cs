@@ -22,7 +22,7 @@ namespace Wordle_Tool
             Users.CreateUser(userCreateTextBox.Text);
             userCreateTextBox.Text = string.Empty;
 
-            PopulateComboBox(Users.users);
+            Users.PopulateComboBox(deleteUsersComboBox);
         }
 
         private void UsersPage_FormClosed(object sender, FormClosedEventArgs e)
@@ -43,24 +43,12 @@ namespace Wordle_Tool
         {
             Users.users.Remove((User) deleteUsersComboBox.SelectedItem);
             deleteUsersComboBox.Text = string.Empty;
-            
-            PopulateComboBox(Users.users);
+
+            Users.PopulateComboBox(deleteUsersComboBox);
         }
-
-        public void PopulateComboBox(List<User> users)
-        {
-            deleteUsersComboBox.Items.Clear();
-            deleteUsersComboBox.DisplayMember = "username";
-
-            foreach (User user in users)
-            {
-                deleteUsersComboBox.Items.Add(user);
-            }
-        }
-
         private void UsersPage_Load(object sender, EventArgs e)
         {
-            PopulateComboBox(Users.users);
+            Users.PopulateComboBox(deleteUsersComboBox);
         }
     }
 }

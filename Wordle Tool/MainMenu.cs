@@ -20,6 +20,7 @@ namespace Wordle_Tool
         private void MainMenu_Load(object sender, EventArgs e)
         {
             Forms.MainMenu = this;
+            Users.PopulateComboBox(currentUserBox);
         }
 
         private void SolverPageButton_Click(object sender, EventArgs e)

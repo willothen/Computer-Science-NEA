@@ -124,6 +124,17 @@ namespace Wordle_Tool
 
             return true;
         }
+
+        public static void PopulateComboBox(ComboBox cb)
+        {
+            cb.Items.Clear();
+            cb.DisplayMember = "username";
+
+            foreach (User user in users)
+            {
+                cb.Items.Add(user);
+            }
+        }
     }
 
     internal static class Program
