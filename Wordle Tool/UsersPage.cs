@@ -23,6 +23,7 @@ namespace Wordle_Tool
             userCreateTextBox.Text = string.Empty;
 
             Users.PopulateComboBox(deleteUsersComboBox);
+            Users.PopulateComboBox(Forms.MainMenu.currentUserBox);
         }
 
         private void UsersPage_FormClosed(object sender, FormClosedEventArgs e)
@@ -45,7 +46,9 @@ namespace Wordle_Tool
             deleteUsersComboBox.Text = string.Empty;
 
             Users.PopulateComboBox(deleteUsersComboBox);
+            Users.PopulateComboBox(Forms.MainMenu.currentUserBox);
         }
+
         private void UsersPage_Load(object sender, EventArgs e)
         {
             Users.PopulateComboBox(deleteUsersComboBox);

@@ -67,6 +67,7 @@ namespace Wordle_Tool
     public static class Users
     {
         public static List<User> users = new List<User>();
+        public static User currentUser;
 
         public static void CreateUser(string name)
         {

@@ -94,6 +94,7 @@
             this.currentUserBox.Name = "currentUserBox";
             this.currentUserBox.Size = new System.Drawing.Size(121, 21);
             this.currentUserBox.TabIndex = 5;
+            this.currentUserBox.SelectedIndexChanged += new System.EventHandler(this.currentUserBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -136,7 +137,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button usersButton;
-        private System.Windows.Forms.ComboBox currentUserBox;
+        public System.Windows.Forms.ComboBox currentUserBox;
         private System.Windows.Forms.Label label2;
     }
 }

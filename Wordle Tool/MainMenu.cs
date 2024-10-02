@@ -56,5 +56,10 @@ namespace Wordle_Tool
 
             this.Hide();
         }
+
+        private void currentUserBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Users.currentUser = (User)((ComboBox)sender).SelectedItem;
+        }
     }
 }
