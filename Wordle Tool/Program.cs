@@ -47,19 +47,23 @@ namespace Wordle_Tool
 
     public class User
     {
-        public string name;
+        private string name;
         public double avgWordsTaken;
 
         public User(string name)
         {
-            this.name = name;
+            this.Name = name;
         }
 
-        public string username
+        public string Name
         {
             get
             {
                 return name;
+            }
+            set
+            {
+                name = value;
             }
         }
     }
@@ -80,7 +84,7 @@ namespace Wordle_Tool
         {
             foreach (User u in users)
             {
-                if (u.name == name)
+                if (u.Name == name)
                 {
                     return u;
                 }
@@ -97,7 +101,7 @@ namespace Wordle_Tool
 
             foreach (User u in users)
             {
-                bw.Write(u.name);
+                bw.Write(u.Name);
                 bw.Write(u.avgWordsTaken);
             }
 
@@ -129,7 +133,7 @@ namespace Wordle_Tool
         public static void PopulateComboBox(ComboBox cb)
         {
             cb.Items.Clear();
-            cb.DisplayMember = "username";
+            cb.DisplayMember = "Name";
 
             foreach (User user in users)
             {
