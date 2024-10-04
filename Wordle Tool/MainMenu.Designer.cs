@@ -33,8 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
             this.usersButton = new System.Windows.Forms.Button();
-            this.currentUserBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.selectUserComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // SolverPageButton
@@ -87,15 +87,6 @@
             this.usersButton.UseVisualStyleBackColor = true;
             this.usersButton.Click += new System.EventHandler(this.usersButton_Click);
             // 
-            // currentUserBox
-            // 
-            this.currentUserBox.FormattingEnabled = true;
-            this.currentUserBox.Location = new System.Drawing.Point(83, 74);
-            this.currentUserBox.Name = "currentUserBox";
-            this.currentUserBox.Size = new System.Drawing.Size(121, 21);
-            this.currentUserBox.TabIndex = 5;
-            this.currentUserBox.SelectedIndexChanged += new System.EventHandler(this.currentUserBox_SelectedIndexChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -106,14 +97,22 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Current User: ";
             // 
+            // selectUserComboBox
+            // 
+            this.selectUserComboBox.FormattingEnabled = true;
+            this.selectUserComboBox.Location = new System.Drawing.Point(83, 74);
+            this.selectUserComboBox.Name = "selectUserComboBox";
+            this.selectUserComboBox.Size = new System.Drawing.Size(121, 21);
+            this.selectUserComboBox.TabIndex = 7;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(244, 265);
+            this.Controls.Add(this.selectUserComboBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.currentUserBox);
             this.Controls.Add(this.usersButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label1);
@@ -137,8 +136,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button usersButton;
-        public System.Windows.Forms.ComboBox currentUserBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox selectUserComboBox;
     }
 }
 

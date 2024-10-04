@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Wordle_Tool
@@ -22,8 +15,7 @@ namespace Wordle_Tool
             Users.CreateUser(userCreateTextBox.Text);
             userCreateTextBox.Text = string.Empty;
 
-            Users.PopulateComboBox(deleteUsersComboBox);
-            Users.PopulateComboBox(Forms.MainMenu.currentUserBox);
+            Users.UpdateComboBoxes();
         }
 
         private void UsersPage_FormClosed(object sender, FormClosedEventArgs e)
@@ -45,13 +37,13 @@ namespace Wordle_Tool
             Users.users.Remove((User) deleteUsersComboBox.SelectedItem);
             deleteUsersComboBox.Text = string.Empty;
 
-            Users.PopulateComboBox(deleteUsersComboBox);
-            Users.PopulateComboBox(Forms.MainMenu.currentUserBox);
+            Users.UpdateComboBoxes();
         }
 
         private void UsersPage_Load(object sender, EventArgs e)
         {
-            Users.PopulateComboBox(deleteUsersComboBox);
+            Users.comboBoxes.Add(deleteUsersComboBox);
+            Users.UpdateComboBoxes();
         }
     }
 }

@@ -71,6 +71,7 @@ namespace Wordle_Tool
     public static class Users
     {
         public static List<User> users = new List<User>();
+        public static List<ComboBox> comboBoxes = new List<ComboBox>();
         public static User currentUser;
 
         public static void CreateUser(string name)
@@ -130,14 +131,19 @@ namespace Wordle_Tool
             return true;
         }
 
-        public static void PopulateComboBox(ComboBox cb)
+        public static void UpdateComboBoxes()
         {
-            cb.Items.Clear();
-            cb.DisplayMember = "Name";
-
-            foreach (User user in users)
+            foreach (ComboBox cb in comboBoxes)
             {
-                cb.Items.Add(user);
+                cb.Items.Clear();
+                cb.DisplayMember = "Name";
+                cb.Text = null;
+                cb.SelectedItem = null;
+
+                foreach (User user in users)
+                {
+                    cb.Items.Add(user);
+                }
             }
         }
     }
