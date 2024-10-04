@@ -20,7 +20,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install .NET Core
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x
 
@@ -28,4 +28,4 @@ jobs:
       run: dotnet restore
       
     - name: Build
-      run: dotnet build "Computer Science NEA.sln" -c Release -r win-x64
+      run: dotnet build "Computer Science NEA.sln" -c Release
