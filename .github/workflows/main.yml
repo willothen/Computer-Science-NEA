@@ -28,4 +28,4 @@ jobs:
       run: dotnet restore
       
     - name: Build
-      run: dotnet build --arch x64 --configuration Release --no-restore
+      run: dotnet build "Computer Science NEA.sln" -c Release -r win-x64
