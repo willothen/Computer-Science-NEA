@@ -28,4 +28,4 @@ jobs:
       run: dotnet restore
       
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build "Wordle Tool/Computer Science NEA.sln" --arch x64 --configuration Release --no-restore
