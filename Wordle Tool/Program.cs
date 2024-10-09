@@ -48,11 +48,29 @@ namespace Wordle_Tool
     public class User
     {
         private string name;
-        public double avgWordsTaken;
+        private int wordsUsed;
+        private int gamesPlayed;
 
-        public User(string name)
+        public User(string name, int wordsUsed = 0, int gamesPlayed = 0)
         {
-            this.Name = name;
+            this.name = name;
+            this.wordsUsed = wordsUsed;
+            this.gamesPlayed = gamesPlayed;
+        }
+
+        public int GetWordsUsed()
+        {
+            return wordsUsed;
+        }
+
+        public int GetGamesPlayed()
+        {
+            return gamesPlayed;
+        }
+
+        public double GetAverageWordsUsed()
+        {
+            return wordsUsed / gamesPlayed;
         }
 
         public string Name
@@ -66,9 +84,9 @@ namespace Wordle_Tool
                 name = value;
             }
         }
-    }
+}
 
-    public static class Users
+public static class Users
     {
         public static List<User> users = new List<User>();
         public static List<ComboBox> comboBoxes = new List<ComboBox>();
@@ -76,9 +94,7 @@ namespace Wordle_Tool
 
         public static void CreateUser(string name)
         {
-            User u = new User(name);
-            u.avgWordsTaken = 0;
-            users.Add(u);
+            users.Add(new User(name));
         }
 
         public static User GetUserByName(string name)
@@ -103,7 +119,8 @@ namespace Wordle_Tool
             foreach (User u in users)
             {
                 bw.Write(u.Name);
-                bw.Write(u.avgWordsTaken);
+                bw.Write(u.GetGamesPlayed);
+                bw.Write(u.GetWordsUsed)
             }
 
             bw.Close();
@@ -120,8 +137,11 @@ namespace Wordle_Tool
 
             for (int i = 0; i < usersCount; i++)
             {
-                User u = new User(br.ReadString());
-                u.avgWordsTaken = br.ReadDouble();
+                string name = br.ReadString();
+                int gamesPlayed = br.ReadInt32();
+                int wordsUsed = br.ReadInt32();
+
+                User u = new User(name, wordsUsed, gamesPlayed);
 
                 users.Add(u);
             }
