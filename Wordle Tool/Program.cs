@@ -112,7 +112,7 @@ public static class Users
 
         public static void SaveUsersToFile()
         {
-            BinaryWriter bw = new BinaryWriter(File.Open("users", FileMode.Create));
+            BinaryWriter bw = new BinaryWriter(File.Open("users.bin", FileMode.Create));
 
             bw.Write(users.Count);
 
@@ -131,7 +131,7 @@ public static class Users
             if (!File.Exists("users"))
                 return false;
 
-            BinaryReader br = new BinaryReader(File.Open("users", FileMode.Open));
+            BinaryReader br = new BinaryReader(File.Open("users.bin", FileMode.Open));
 
             int usersCount = br.ReadInt32();
 
