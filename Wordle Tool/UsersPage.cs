@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Wordle_Tool
@@ -12,8 +13,23 @@ namespace Wordle_Tool
 
         private void userCreateButton_Click(object sender, EventArgs e)
         {
-            Users.CreateUser(userCreateTextBox.Text);
-            userCreateTextBox.Text = string.Empty;
+            string username = userCreateTextBox.Text;
+            string usernameRegex = "^[a-zA-Z]+$";
+
+            if (Regex.IsMatch(username, usernameRegex))
+            {
+                Users.CreateUser(username);
+                userCreateTextBox.Text = string.Empty;
+            }
+            else
+            {
+                string message = "Username can only contain letters";
+                string caption = "Error in input";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+            }
 
             Users.UpdateComboBoxes();
         }
