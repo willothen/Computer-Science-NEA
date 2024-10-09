@@ -119,8 +119,8 @@ public static class Users
             foreach (User u in users)
             {
                 bw.Write(u.Name);
-                bw.Write(u.GetGamesPlayed);
-                bw.Write(u.GetWordsUsed)
+                bw.Write(u.GetGamesPlayed());
+                bw.Write(u.GetWordsUsed());
             }
 
             bw.Close();
@@ -128,7 +128,7 @@ public static class Users
 
         public static bool LoadUsersFromFile()
         {
-            if (!File.Exists("users"))
+            if (!File.Exists("users.bin"))
                 return false;
 
             BinaryReader br = new BinaryReader(File.Open("users.bin", FileMode.Open));
