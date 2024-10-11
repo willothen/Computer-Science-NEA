@@ -188,7 +188,7 @@ namespace Wordle_Tool
 
         public void NextWordButtonClicked()
         {
-            if (currentRow <= 6)
+            if (currentRow <= 4)
             {
                 CollectGreenLetters(currentRow);
                 CollectYellowLetters(currentRow);

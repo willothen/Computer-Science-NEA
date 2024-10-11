@@ -70,7 +70,7 @@ namespace Wordle_Tool
 
         public double GetAverageWordsUsed()
         {
-            return wordsUsed / gamesPlayed;
+            return (double) wordsUsed / (double) gamesPlayed;
         }
 
         public string Name
