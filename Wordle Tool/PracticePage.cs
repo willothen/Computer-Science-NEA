@@ -9,6 +9,7 @@ namespace Wordle_Tool
     public partial class PracticePage : Form
     {
         static Label[,] words;
+        Dictionary<char, Label> keyboard = new Dictionary<char, Label>();
         PracticeGame game;
 
         public PracticePage()
