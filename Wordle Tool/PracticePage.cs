@@ -9,7 +9,7 @@ namespace Wordle_Tool
     public partial class PracticePage : Form
     {
         static Label[,] words;
-        Dictionary<char, Label> keyboard = new Dictionary<char, Label>();
+        static Dictionary<char, Label> keyboard = new Dictionary<char, Label>();
         PracticeGame game;
 
         public PracticePage()
@@ -79,7 +79,7 @@ namespace Wordle_Tool
                 this.Controls.Add(l);
             }
 
-            game = new PracticeGame(ref words);
+            game = new PracticeGame(ref words, ref keyboard);
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -117,7 +117,7 @@ namespace Wordle_Tool
 
         private void newGameButton_Click(object sender, EventArgs e)
         {
-            game = new PracticeGame(ref words);
+            game = new PracticeGame(ref words, ref keyboard);
         }
     }
 
@@ -128,10 +128,12 @@ namespace Wordle_Tool
 
         private string solution;
         Label[,] words;
+        Dictionary<char, Label> keyboard;
 
-        public PracticeGame(ref Label[,] words)
+        public PracticeGame(ref Label[,] words, ref Dictionary<char, Label> keyboard)
         {
             this.words = words;
+            this.keyboard = keyboard;
 
             for (int i = 0; i < 6; i++)
             {
@@ -142,6 +144,11 @@ namespace Wordle_Tool
                     label.BackColor = Color.FromArgb(18, 18, 19);
                     words[i, a] = label;
                 }
+            }
+
+            foreach (KeyValuePair k in keyboard)
+            {
+                k.
             }
 
             Random rnd = new Random();
@@ -216,12 +223,15 @@ namespace Wordle_Tool
                 {
                     case 0:
                         words[currentLine, i].BackColor = WordleColours.grey;
+                        keyboard[words[currentLine,i].Text.ToLower()[0]].BackColor = WordleColours.keyboardNotValid;
                         break;
                     case 1:
                         words[currentLine, i].BackColor = WordleColours.yellow;
+                        keyboard[words[currentLine, i].Text.ToLower()[0]].BackColor = WordleColours.yellow;
                         break;
                     case 2:
                         words[currentLine, i].BackColor = WordleColours.green;
+                        keyboard[words[currentLine, i].Text.ToLower()[0]].BackColor = WordleColours.green;
                         numberOfGreen++;
                         break;
                 }
