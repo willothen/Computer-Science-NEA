@@ -55,12 +55,25 @@ namespace Wordle_Tool
                 char c = (char)(i + 97);
 
                 l.Text = c.ToString();
-                l.Location = new Point(330+30*i, 100);
+                //l.Location = new Point(330 + 30 * i, 100);
                 l.Size = new Size(20, 20);
-                l.BackColor = WordleColours.black;
+                l.BackColor = WordleColours.KeyboardDefault;
                 l.Font = new Font("Arial", 10, FontStyle.Bold);
                 l.ForeColor = Color.White;
-                l.BorderStyle = BorderStyle.FixedSingle;
+                l.BorderStyle = BorderStyle.FixedSingle; 
+
+                if (i < 10)
+                {
+                    l.Location = new Point(330 + 30 * i, 100);
+                }
+                else if (i < 20)
+                {
+                    l.Location = new Point(330 + 30 * (i - 10), 130);
+                }
+                else
+                {
+                    l.Location = new Point(330 + 30 * (i - 20), 160);
+                }
 
                 keyboard.Add(c, l);
                 this.Controls.Add(l);
