@@ -49,6 +49,23 @@ namespace Wordle_Tool
                 x = 50;
             }
 
+            for (int i = 0; i < 26; i++)
+            {
+                Label l = new Label();
+                char c = (char)(i + 97);
+
+                l.Text = c.ToString();
+                l.Location = new Point(330+30*i, 100);
+                l.Size = new Size(20, 20);
+                l.BackColor = WordleColours.black;
+                l.Font = new Font("Arial", 10, FontStyle.Bold);
+                l.ForeColor = Color.White;
+                l.BorderStyle = BorderStyle.FixedSingle;
+
+                keyboard.Add(c, l);
+                this.Controls.Add(l);
+            }
+
             game = new PracticeGame(ref words);
         }
 
