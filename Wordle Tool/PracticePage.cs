@@ -116,12 +116,14 @@ namespace Wordle_Tool
 
         private void newGameButton_Click(object sender, EventArgs e)
         {
+            if (Users.currentUser != null)
+                Users.currentUser.AddGame(game.GetWordsUsed());
             game = new PracticeGame(ref words, ref keyboard);
         }
 
         private void leaderboardButton_Click(object sender, EventArgs e)
         {
-            Forms.LeaderboardPage.Location = this.Location;
+            Forms.LeaderboardPage.Location = new Point(this.Location.X+20, this.Location.Y+20);
             Forms.LeaderboardPage.Show();
         }
     }
@@ -256,6 +258,11 @@ namespace Wordle_Tool
             winPanel.BackColor = Color.FromArgb(10, 10, 10, 255);
             
             Forms.PracticePage.Controls.Add(winPanel);
+        }
+
+        public int GetWordsUsed()
+        {
+            return currentLine;
         }
 
         public void RemoveCharacter()
