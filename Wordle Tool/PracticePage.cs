@@ -146,7 +146,7 @@ namespace Wordle_Tool
                 }
             }
 
-            foreach (var k in keyboard)
+            foreach (KeyValuePair<char, Label> k in keyboard)
             {
                 k.Value.BackColor = WordleColours.KeyboardDefault;
             }
