@@ -71,6 +71,12 @@ namespace Wordle_Tool
             return gamesPlayed;
         }
 
+        public void AddGame(int wordsUsed)
+        {
+            this.wordsUsed += wordsUsed;
+            gamesPlayed++;
+        }
+
         public double GetAverageWordsUsed()
         {
             return (double) wordsUsed / (double) gamesPlayed;

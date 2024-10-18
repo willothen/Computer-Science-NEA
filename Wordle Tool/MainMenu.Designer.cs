@@ -99,11 +99,13 @@
             // 
             // selectUserComboBox
             // 
+            this.selectUserComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectUserComboBox.FormattingEnabled = true;
             this.selectUserComboBox.Location = new System.Drawing.Point(83, 74);
             this.selectUserComboBox.Name = "selectUserComboBox";
             this.selectUserComboBox.Size = new System.Drawing.Size(121, 21);
             this.selectUserComboBox.TabIndex = 7;
+            this.selectUserComboBox.SelectionChangeCommitted += new System.EventHandler(this.selectUserComboBox_SelectionChangeCommitted);
             // 
             // MainMenu
             // 
