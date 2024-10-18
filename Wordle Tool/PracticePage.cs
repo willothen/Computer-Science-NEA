@@ -146,9 +146,9 @@ namespace Wordle_Tool
                 }
             }
 
-            foreach (KeyValuePair k in keyboard)
+            foreach (var k in keyboard)
             {
-                k.
+                k.Value.BackColor = WordleColours.KeyboardDefault;
             }
 
             Random rnd = new Random();

@@ -43,6 +43,8 @@ namespace Wordle_Tool
         public static Color grey = Color.FromArgb(58, 58, 60);
         public static Color yellow = Color.FromArgb(181, 159, 59);
         public static Color green = Color.FromArgb(83, 141, 78);
+        public static Color KeyboardDefault = Color.FromArgb(129, 131, 132);
+        public static Color keyboardNotValid = Color.FromArgb(58, 58, 60);
     }
 
     public class User
