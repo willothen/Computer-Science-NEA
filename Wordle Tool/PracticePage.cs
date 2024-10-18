@@ -111,13 +111,18 @@ namespace Wordle_Tool
                 game.AddCharacter((char)keyData);
             }
 
-            //return base.ProcessCmdKey(ref msg, keyData);
             return true;
         }
 
         private void newGameButton_Click(object sender, EventArgs e)
         {
             game = new PracticeGame(ref words, ref keyboard);
+        }
+
+        private void leaderboardButton_Click(object sender, EventArgs e)
+        {
+            Forms.LeaderboardPage.Location = this.Location;
+            Forms.LeaderboardPage.Show();
         }
     }
 

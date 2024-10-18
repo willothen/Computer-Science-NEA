@@ -61,6 +61,7 @@
             this.leaderboardButton.TabIndex = 2;
             this.leaderboardButton.Text = "leaderboard";
             this.leaderboardButton.UseVisualStyleBackColor = true;
+            this.leaderboardButton.Click += new System.EventHandler(this.leaderboardButton_Click);
             // 
             // PracticePage
             // 

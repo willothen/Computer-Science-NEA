@@ -77,6 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LeaderboardPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaderboardPage.Designer.cs">
+      <DependentUpon>LeaderboardPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="PracticePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     <Compile Include="UsersPage.Designer.cs">
       <DependentUpon>UsersPage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="LeaderboardPage.resx">
+      <DependentUpon>LeaderboardPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>

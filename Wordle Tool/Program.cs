@@ -13,6 +13,7 @@ namespace Wordle_Tool
         public static SolverPage SolverPage = new SolverPage();
         public static PracticePage PracticePage = new PracticePage();
         public static UsersPage UsersPage = new UsersPage();
+        public static LeaderboardPage LeaderboardPage = new LeaderboardPage();
     }
 
     static class WordLists
