@@ -119,12 +119,6 @@ namespace Wordle_Tool
         {
             game = new PracticeGame(ref words, ref keyboard);
         }
-
-        private void leaderboardButton_Click(object sender, EventArgs e)
-        {
-            Forms.LeaderboardPage.Location = new Point(this.Location.X+20, this.Location.Y+20);
-            Forms.LeaderboardPage.Show();
-        }
     }
 
     public class PracticeGame

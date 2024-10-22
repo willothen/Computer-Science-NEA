@@ -32,14 +32,11 @@
             this.PracticePageButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.usersButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.selectUserComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // SolverPageButton
             // 
-            this.SolverPageButton.Location = new System.Drawing.Point(83, 117);
+            this.SolverPageButton.Location = new System.Drawing.Point(80, 85);
             this.SolverPageButton.Name = "SolverPageButton";
             this.SolverPageButton.Size = new System.Drawing.Size(75, 23);
             this.SolverPageButton.TabIndex = 0;
@@ -49,7 +46,7 @@
             // 
             // PracticePageButton
             // 
-            this.PracticePageButton.Location = new System.Drawing.Point(83, 146);
+            this.PracticePageButton.Location = new System.Drawing.Point(80, 114);
             this.PracticePageButton.Name = "PracticePageButton";
             this.PracticePageButton.Size = new System.Drawing.Size(75, 23);
             this.PracticePageButton.TabIndex = 1;
@@ -69,7 +66,7 @@
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(83, 204);
+            this.ExitButton.Location = new System.Drawing.Point(80, 143);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(75, 23);
             this.ExitButton.TabIndex = 3;
@@ -77,45 +74,12 @@
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // usersButton
-            // 
-            this.usersButton.Location = new System.Drawing.Point(83, 175);
-            this.usersButton.Name = "usersButton";
-            this.usersButton.Size = new System.Drawing.Size(75, 23);
-            this.usersButton.TabIndex = 4;
-            this.usersButton.Text = "Users";
-            this.usersButton.UseVisualStyleBackColor = true;
-            this.usersButton.Click += new System.EventHandler(this.usersButton_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Current User: ";
-            // 
-            // selectUserComboBox
-            // 
-            this.selectUserComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.selectUserComboBox.FormattingEnabled = true;
-            this.selectUserComboBox.Location = new System.Drawing.Point(83, 74);
-            this.selectUserComboBox.Name = "selectUserComboBox";
-            this.selectUserComboBox.Size = new System.Drawing.Size(121, 21);
-            this.selectUserComboBox.TabIndex = 7;
-            this.selectUserComboBox.SelectionChangeCommitted += new System.EventHandler(this.selectUserComboBox_SelectionChangeCommitted);
-            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(244, 265);
-            this.Controls.Add(this.selectUserComboBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.usersButton);
+            this.ClientSize = new System.Drawing.Size(244, 196);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PracticePageButton);
@@ -137,9 +101,6 @@
         private System.Windows.Forms.Button PracticePageButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ExitButton;
-        private System.Windows.Forms.Button usersButton;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox selectUserComboBox;
     }
 }
 

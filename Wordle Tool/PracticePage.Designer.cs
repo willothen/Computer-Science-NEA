@@ -30,7 +30,6 @@
         {
             this.BackButton = new System.Windows.Forms.Button();
             this.resetGameButton = new System.Windows.Forms.Button();
-            this.leaderboardButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BackButton
@@ -53,23 +52,12 @@
             this.resetGameButton.UseVisualStyleBackColor = true;
             this.resetGameButton.Click += new System.EventHandler(this.resetGameButton_click);
             // 
-            // leaderboardButton
-            // 
-            this.leaderboardButton.Location = new System.Drawing.Point(234, 390);
-            this.leaderboardButton.Name = "leaderboardButton";
-            this.leaderboardButton.Size = new System.Drawing.Size(75, 23);
-            this.leaderboardButton.TabIndex = 2;
-            this.leaderboardButton.Text = "leaderboard";
-            this.leaderboardButton.UseVisualStyleBackColor = true;
-            this.leaderboardButton.Click += new System.EventHandler(this.leaderboardButton_Click);
-            // 
             // PracticePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(19)))));
             this.ClientSize = new System.Drawing.Size(766, 450);
-            this.Controls.Add(this.leaderboardButton);
             this.Controls.Add(this.resetGameButton);
             this.Controls.Add(this.BackButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -87,6 +75,5 @@
 
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button resetGameButton;
-        private System.Windows.Forms.Button leaderboardButton;
     }
 }

@@ -12,8 +12,6 @@ namespace Wordle_Tool
         public static MainMenu MainMenu;
         public static SolverPage SolverPage = new SolverPage();
         public static PracticePage PracticePage = new PracticePage();
-        public static UsersPage UsersPage = new UsersPage();
-        public static LeaderboardPage LeaderboardPage = new LeaderboardPage();
     }
 
     static class WordLists
@@ -48,135 +46,6 @@ namespace Wordle_Tool
         public static Color keyboardNotValid = Color.FromArgb(58, 58, 60);
     }
 
-    public class User
-    {
-        private string name;
-        private int wordsUsed;
-        private int gamesCompleted;
-
-        public User(string name, int wordsUsed = 0, int gamesCompleted = 0)
-        {
-            this.name = name;
-            this.wordsUsed = wordsUsed;
-            this.gamesCompleted = gamesCompleted;
-        }
-
-        public int GetWordsUsed()
-        {
-            return wordsUsed;
-        }
-
-        public int GetGamesCompleted()
-        {
-            return gamesCompleted;
-        }
-
-        public void AddGame(int wordsUsed)
-        {
-            this.wordsUsed += wordsUsed;
-            gamesCompleted++;
-        }
-
-        public double GetAverageWordsUsed()
-        {
-            return (double) wordsUsed / (double) gamesCompleted;
-        }
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
-}
-
-public static class Users
-    {
-        public static List<User> users = new List<User>();
-        public static List<ComboBox> comboBoxes = new List<ComboBox>();
-        public static User currentUser;
-
-        public static void CreateUser(string name)
-        {
-            users.Add(new User(name));
-        }
-
-        public static User GetUserByName(string name)
-        {
-            foreach (User u in users)
-            {
-                if (u.Name == name)
-                {
-                    return u;
-                }
-            }
-
-            return new User("");
-        }
-
-        public static void SaveUsersToFile()
-        {
-            BinaryWriter bw = new BinaryWriter(File.Open("users.bin", FileMode.Create));
-
-            bw.Write(users.Count);
-
-            foreach (User u in users)
-            {
-                bw.Write(u.Name);
-                bw.Write(u.GetGamesCompleted());
-                bw.Write(u.GetWordsUsed());
-            }
-
-            bw.Close();
-        }
-
-        public static bool LoadUsersFromFile()
-        {
-            if (!File.Exists("users.bin"))
-                return false;
-
-            BinaryReader br = new BinaryReader(File.Open("users.bin", FileMode.Open));
-
-            int usersCount = br.ReadInt32();
-
-            for (int i = 0; i < usersCount; i++)
-            {
-                string name = br.ReadString();
-                int gamesPlayed = br.ReadInt32();
-                int wordsUsed = br.ReadInt32();
-
-                User u = new User(name, wordsUsed, gamesPlayed);
-
-                users.Add(u);
-            }
-
-            br.Close();
-
-            return true;
-        }
-
-        public static void UpdateComboBoxes()
-        {
-            foreach (ComboBox cb in comboBoxes)
-            {
-                cb.Items.Clear();
-                cb.DisplayMember = "Name";
-                cb.Text = null;
-                cb.SelectedItem = null;
-
-                foreach (User user in users)
-                {
-                    cb.Items.Add(user);
-                }
-            }
-        }
-    }
-
     internal static class Program
     {
         /// <summary>
@@ -185,14 +54,9 @@ public static class Users
         [STAThread]
         static void Main()
         {
-            Users.LoadUsersFromFile();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainMenu());
-
-            // Runs on exit of program
-            Users.SaveUsersToFile();
         }
     }
 }

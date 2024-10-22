@@ -20,9 +20,6 @@ namespace Wordle_Tool
         private void MainMenu_Load(object sender, EventArgs e)
         {
             Forms.MainMenu = this;
-
-            Users.comboBoxes.Add(selectUserComboBox);
-            Users.UpdateComboBoxes();
         }
 
         private void SolverPageButton_Click(object sender, EventArgs e)
@@ -49,19 +46,6 @@ namespace Wordle_Tool
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void usersButton_Click(object sender, EventArgs e)
-        {
-            Forms.UsersPage.Location = this.Location;
-            Forms.UsersPage.Show();
-
-            this.Hide();
-        }
-
-        private void selectUserComboBox_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            Users.currentUser = (User)((ComboBox)sender).SelectedItem;
         }
     }
 }
