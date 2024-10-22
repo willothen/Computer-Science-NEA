@@ -11,7 +11,7 @@ namespace Wordle_Tool
     {
         static Label[,] words;
         static Dictionary<char, Label> keyboard = new Dictionary<char, Label>();
-        public PracticeGame game;
+        PracticeGame game;
 
         public PracticePage()
         {
@@ -159,7 +159,6 @@ namespace Wordle_Tool
 
             Random rnd = new Random();
             solution = WordLists.answers[rnd.Next(WordLists.answers.Length)];
-            solution = "salet";
         }
 
         public void AddCharacter(char c)
