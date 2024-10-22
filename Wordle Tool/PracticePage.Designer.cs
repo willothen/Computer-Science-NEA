@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.BackButton = new System.Windows.Forms.Button();
-            this.newGameButton = new System.Windows.Forms.Button();
+            this.resetGameButton = new System.Windows.Forms.Button();
             this.leaderboardButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -43,15 +43,15 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // newGameButton
+            // resetGameButton
             // 
-            this.newGameButton.Location = new System.Drawing.Point(50, 390);
-            this.newGameButton.Name = "newGameButton";
-            this.newGameButton.Size = new System.Drawing.Size(75, 23);
-            this.newGameButton.TabIndex = 1;
-            this.newGameButton.Text = "New Game";
-            this.newGameButton.UseVisualStyleBackColor = true;
-            this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
+            this.resetGameButton.Location = new System.Drawing.Point(50, 390);
+            this.resetGameButton.Name = "resetGameButton";
+            this.resetGameButton.Size = new System.Drawing.Size(75, 23);
+            this.resetGameButton.TabIndex = 1;
+            this.resetGameButton.Text = "reset game";
+            this.resetGameButton.UseVisualStyleBackColor = true;
+            this.resetGameButton.Click += new System.EventHandler(this.resetGameButton_click);
             // 
             // leaderboardButton
             // 
@@ -70,7 +70,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(19)))));
             this.ClientSize = new System.Drawing.Size(766, 450);
             this.Controls.Add(this.leaderboardButton);
-            this.Controls.Add(this.newGameButton);
+            this.Controls.Add(this.resetGameButton);
             this.Controls.Add(this.BackButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -86,7 +86,7 @@
         #endregion
 
         private System.Windows.Forms.Button BackButton;
-        private System.Windows.Forms.Button newGameButton;
+        private System.Windows.Forms.Button resetGameButton;
         private System.Windows.Forms.Button leaderboardButton;
     }
 }

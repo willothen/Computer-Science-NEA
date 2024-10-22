@@ -52,13 +52,13 @@ namespace Wordle_Tool
     {
         private string name;
         private int wordsUsed;
-        private int gamesPlayed;
+        private int gamesCompleted;
 
-        public User(string name, int wordsUsed = 0, int gamesPlayed = 0)
+        public User(string name, int wordsUsed = 0, int gamesCompleted = 0)
         {
             this.name = name;
             this.wordsUsed = wordsUsed;
-            this.gamesPlayed = gamesPlayed;
+            this.gamesCompleted = gamesCompleted;
         }
 
         public int GetWordsUsed()
@@ -66,20 +66,20 @@ namespace Wordle_Tool
             return wordsUsed;
         }
 
-        public int GetGamesPlayed()
+        public int GetGamesCompleted()
         {
-            return gamesPlayed;
+            return gamesCompleted;
         }
 
         public void AddGame(int wordsUsed)
         {
             this.wordsUsed += wordsUsed;
-            gamesPlayed++;
+            gamesCompleted++;
         }
 
         public double GetAverageWordsUsed()
         {
-            return (double) wordsUsed / (double) gamesPlayed;
+            return (double) wordsUsed / (double) gamesCompleted;
         }
 
         public string Name
@@ -128,7 +128,7 @@ public static class Users
             foreach (User u in users)
             {
                 bw.Write(u.Name);
-                bw.Write(u.GetGamesPlayed());
+                bw.Write(u.GetGamesCompleted());
                 bw.Write(u.GetWordsUsed());
             }
 
