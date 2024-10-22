@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Wordle_Tool
@@ -61,7 +60,7 @@ namespace Wordle_Tool
                 l.BackColor = WordleColours.KeyboardDefault;
                 l.Font = new Font("Arial", 10, FontStyle.Bold);
                 l.ForeColor = Color.White;
-                l.BorderStyle = BorderStyle.FixedSingle; 
+                l.BorderStyle = BorderStyle.FixedSingle;
 
                 if (i < 10)
                 {
@@ -223,7 +222,7 @@ namespace Wordle_Tool
                 {
                     case 0:
                         words[currentLine, i].BackColor = WordleColours.grey;
-                        keyboard[words[currentLine,i].Text.ToLower()[0]].BackColor = WordleColours.keyboardNotValid;
+                        keyboard[words[currentLine, i].Text.ToLower()[0]].BackColor = WordleColours.keyboardNotValid;
                         break;
                     case 1:
                         words[currentLine, i].BackColor = WordleColours.yellow;
@@ -250,7 +249,7 @@ namespace Wordle_Tool
             //winPanel.Size = new Size(300, 200);
             //winPanel.BackColor = Color.FromArgb(10, 10, 10, 255);
             //winPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-               
+
             //Forms.PracticePage.Controls.Add(winPanel);
             //winPanel.Show();
 
