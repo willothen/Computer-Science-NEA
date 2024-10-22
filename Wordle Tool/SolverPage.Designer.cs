@@ -31,6 +31,7 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.NextWordButton = new System.Windows.Forms.Button();
             this.ResetSolverButton = new System.Windows.Forms.Button();
+            this.startingWordButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BackButton
@@ -65,12 +66,23 @@
             this.ResetSolverButton.UseVisualStyleBackColor = true;
             this.ResetSolverButton.Click += new System.EventHandler(this.ResetSolverButton_Clicked);
             // 
+            // startingWordButton
+            // 
+            this.startingWordButton.Location = new System.Drawing.Point(279, 12);
+            this.startingWordButton.Name = "startingWordButton";
+            this.startingWordButton.Size = new System.Drawing.Size(98, 23);
+            this.startingWordButton.TabIndex = 3;
+            this.startingWordButton.Text = "set starting word";
+            this.startingWordButton.UseVisualStyleBackColor = true;
+            this.startingWordButton.Click += new System.EventHandler(this.startingWordButton_Click);
+            // 
             // SolverPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(407, 450);
+            this.Controls.Add(this.startingWordButton);
             this.Controls.Add(this.ResetSolverButton);
             this.Controls.Add(this.NextWordButton);
             this.Controls.Add(this.BackButton);
@@ -90,5 +102,6 @@
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button NextWordButton;
         private System.Windows.Forms.Button ResetSolverButton;
+        private System.Windows.Forms.Button startingWordButton;
     }
 }

@@ -78,6 +78,27 @@ namespace Wordle_Tool
         {
             solve = new SolveWordle(ref words);
         }
+
+        private void startingWordButton_Click(object sender, EventArgs e)
+        {
+            Form form = new Form();
+            form.Text = "Starting word options";
+            form.BackColor = Color.FromArgb(20, 20, 20);
+            form.Size = new Size(250, 100);
+            form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            form.Show();
+
+            TextBox entryBox = new TextBox();
+            Button acceptEntryButton = new Button();
+
+            entryBox.Location = new Point(10, 10);
+            acceptEntryButton.Location = new Point(130, 10);
+            acceptEntryButton.BackColor = Color.White;
+            acceptEntryButton.Text = "Enter";
+            
+            form.Controls.Add(entryBox);
+            form.Controls.Add(acceptEntryButton);
+        }
     }
 
     public class SolveWordle
